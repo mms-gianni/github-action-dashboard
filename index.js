@@ -3,6 +3,7 @@ try {
     const history = require('connect-history-api-fallback');
     const express = require('express');
     const app = express();
+    const PORT = process.env.PORT || 8080
     const server = require('http').createServer(app);
 
     const configureAPI = require('./configure');
@@ -44,7 +45,6 @@ try {
     }
     const { PORT = 8080 } = process.env;
 
-    const PORT = process.env.PORT || 8080
 
     // API
     configureAPI.before(app);
