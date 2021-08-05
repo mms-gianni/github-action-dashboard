@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "serve": "./node_modules/nodemon/bin/nodemon.js index.js --ignore 'client/*.js'  --exec 'npm run lint && node'",
     "lint": "./node_modules/.bin/eslint '**/*.js' --ignore-pattern 'client/dist/' "
   },
