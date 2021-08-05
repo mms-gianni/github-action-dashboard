@@ -44,6 +44,8 @@ try {
     }
     const { PORT = 8080 } = process.env;
 
+    const PORT = process.env.PORT || 8080
+
     // API
     configureAPI.before(app);
     configureAPI.after(app, server);
