@@ -43,7 +43,6 @@ try {
         //app.all('/webhook', webhooks.middleware(req, res));
 
     }
-    const { PORT = 8080 } = process.env;
 
 
     // API
