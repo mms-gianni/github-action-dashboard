@@ -3,11 +3,11 @@ try {
     const history = require('connect-history-api-fallback');
     const express = require('express');
     const app = express();
-    const PORT = process.env.PORT || 8080
     const server = require('http').createServer(app);
 
     const configureAPI = require('./configure');
 
+    const { PORT = 8080 } = process.env;
 
     if (process.env.GITHUB_APP_WEBHOOK_SECRET) {
         console.log('webhook listening on /webhook');
@@ -40,8 +40,6 @@ try {
         
         const middleware = createNodeMiddleware(webhooks, { path: "/webhook" });
         app.use('/webhook', middleware);
-        //app.all('/webhook', webhooks.middleware(req, res));
-
     }
 
 
