@@ -12,10 +12,12 @@
     "env": {
 
       "GITHUB_USERNAME": {
-        "description": "Github Username"
+        "description": "Github Username",
+        "required": false
       },
       "GITHUB_ORG": {
-        "description": "Github Organisation, Only one is valid. If both are specified GITHUB_ORG takes precedence and the GITHUB_USERNAME is ignored."
+        "description": "Github Organisation, Only one is valid. If both are specified GITHUB_ORG takes precedence and the GITHUB_USERNAME is ignored.",
+        "required": false
       },
       "GITHUB_APPID": {
         "description": "The AppId from the GitHub App general settings page."
@@ -30,14 +32,18 @@
         "description": "Installation id that can be retrieved using steps in the next section."
       },
       "GITHUB_APP_WEBHOOK_SECRET": {
-        "description": "Optional. If you don't supply the dashboard will not setup webhooks and only update every 15 minutes."
+        "description": "Optional. If you don't supply the dashboard will not setup webhooks and only update every 15 minutes.",
+        "generator": "secret",
+        "required": false
       },
       "DEBUG": {
-        "description": "action-dashboard:* - Optional setting to help in debugging"
+        "description": "action-dashboard:* - Optional setting to help in debugging",
+        "required": false
       },
       "NODE_ENV": {
           "description": "required in Buildprocess",
-          "default": "development"
+          "default": "development",
+          "required": false
       }
     }
   }

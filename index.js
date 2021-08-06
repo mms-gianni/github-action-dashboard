@@ -4,6 +4,7 @@ try {
     const express = require('express');
     const app = express();
     const server = require('http').createServer(app);
+    //const { createNodeMiddleware } = require("@octokit/webhooks");
 
     const configureAPI = require('./configure');
 
@@ -41,6 +42,15 @@ try {
         const middleware = createNodeMiddleware(webhooks, { path: "/webhook" });
         app.use('/webhook', middleware);
     }
+    
+
+
+    //app.use('/webhook', configureAPI.middleware);
+
+    /*
+    const middleware = createNodeMiddleware(configureAPI.webhooks, { path: "/webhook" });
+    app.use('/webhook', middleware);
+    */
 
 
     // API
