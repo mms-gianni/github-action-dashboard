@@ -117,6 +117,10 @@ docker-compose up -d gad gad-ngrok
 ~~~
 
 #### Option 3
+Start it on Heroku https://heroku.com/deploy 
+
+Use https://YOURAPP.herokuapp/webhook and the autocenerated secret in your Github app. 
+#### Option 4
 
 Requires nodejs installed locally.
 
