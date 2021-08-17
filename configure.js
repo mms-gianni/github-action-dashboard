@@ -19,11 +19,13 @@ const bodyParser = require('body-parser')
 const routes = require('./routes')
 const middleware = require('./webhooks')
 
+const { DASHBOARD_SESSION_KEY = "3KYu07W85yDjIhUtBVHa61gmF" } = process.env;
+
 module.exports = {
     before: (app) => {
         app.use(cookieSession({
-            name: 'mysession',
-            keys: ['vueauthrandomkey'],
+            name: 'ActionDashboardSession',
+            keys: [DASHBOARD_SESSION_KEY],
             maxAge: 24 * 60 * 60 * 1000 // 24 hours
         }))
         app.use(bodyParser.json());
