@@ -1,6 +1,6 @@
 # GitHub Action Dashboard
 
-![ScreenShot](https://github.com/ChrisKinsman/github-action-dashboard/blob/main/docs/images/ActionDashboardScreenShot.png)
+![ScreenShot](docs/images/ActionDashboardScreenShot.png)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
