@@ -226,7 +226,7 @@ GitHub.getMetrics = function getMetrics() {
 
     const status_int = {
         "success": 0,
-        "pending": 1,
+        "queued": 1,
         "running": 2,
         "failure": 3,
     }
@@ -263,7 +263,7 @@ GitHub.getMetrics = function getMetrics() {
         for (const run of _runs) {
             metrics += "# HELP status of workflow '" + run.workflow + "' \n";
             metrics += "# TYPE status gauge \n";
-            metrics += "runs{repo=\"" + run.repo + "\",repoowner=\"" + run.owner + "\",workflow=\"" + run.workflow + "\",workflowId=\"" + run.workflowId + "\",branch=\"" + run.branch + "\"} " + status_int[run.status] + " \n";
+            metrics += "action_run{repo=\"" + run.repo + "\",repoowner=\"" + run.owner + "\",workflow=\"" + run.workflow + "\",workflowId=\"" + run.workflowId + "\",branch=\"" + run.branch + "\"} " + status_int[run.status] + " \n";
         }
     }
 
