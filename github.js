@@ -234,36 +234,36 @@ GitHub.getMetrics = function getMetrics() {
     let metrics = ""
     
     if (_stats.repos_total != undefined) {
-        metrics += "# HELP total number of repos \n";
-        metrics += "# TYPE repos_total gauge \n";
-        metrics += "repos_total " + _stats.repos_total + " \n";
+        metrics += "# HELP: total number of repos\n";
+        metrics += "# TYPE: repos_total gauge\n";
+        metrics += "repos_total " + _stats.repos_total + "\n";
     }
 
     if (_stats.workflows_total != undefined) {
-        metrics += "# HELP total number of workflows \n";
-        metrics += "# TYPE workflows_total gauge \n";
-        metrics += "workflows_total " + _stats.workflows_total + " \n";
+        metrics += "# HELP: total number of workflows\n";
+        metrics += "# TYPE: workflows_total gauge\n";
+        metrics += "workflows_total " + _stats.workflows_total + "\n";
     }
 
     if (_stats.repos_with_workflows_total != undefined) {
-        metrics += "# HELP number of repos with workflows_total \n";
-        metrics += "# TYPE repos_with_workflows_total gauge \n";
-        metrics += "repos_with_workflows_total " + _stats.repos_with_workflows_total + " \n";
+        metrics += "# HELP: number of repos with workflows_total\n";
+        metrics += "# TYPE: repos_with_workflows_total gauge\n";
+        metrics += "repos_with_workflows_total " + _stats.repos_with_workflows_total + "\n";
     }
 
     if (_stats.repos_with_workflows != undefined) {
         for (const repo in _stats.repos_with_workflows) {
-            metrics += "# HELP number of workflows for repo " + repo + " \n";
-            metrics += "# TYPE workflows_for_repo gauge \n";
-            metrics += "workflows{repo:" + repo + "} " + _stats.repos_with_workflows[repo] + " \n";
+            metrics += "# HELP: number of workflows for repo " + repo + "\n";
+            metrics += "# TYPE: workflows_for_repo gauge\n";
+            metrics += "workflows{repo:" + repo + "} " + _stats.repos_with_workflows[repo] + "\n";
         }
     }
 
     if ( _runs.length > 0) {
         for (const run of _runs) {
-            metrics += "# HELP status of workflow '" + run.workflow + "' \n";
-            metrics += "# TYPE status gauge \n";
-            metrics += "action_run{repo=\"" + run.repo + "\",repoowner=\"" + run.owner + "\",workflow=\"" + run.workflow + "\",workflowId=\"" + run.workflowId + "\",branch=\"" + run.branch + "\"} " + status_int[run.status] + " \n";
+            metrics += "# HELP: status of workflow '" + run.workflow + "'\n";
+            metrics += "# TYPE: status gauge\n";
+            metrics += "action_run{repo=\"" + run.repo + "\",repoowner=\"" + run.owner + "\",workflow=\"" + run.workflow + "\",workflowId=\"" + run.workflowId + "\",branch=\"" + run.branch + "\"} " + status_int[run.status] + "\n";
         }
     }
 
