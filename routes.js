@@ -69,4 +69,9 @@ router.get('/user', function (req, res, next) {
     res.send({'id': req.user['id'], 'username': req.user['username']});
 });
 
+router.get('/metrics', function (req, res, next) {
+    const metrics = gitHub.getMetrics();
+    res.send(metrics);
+});
+
 module.exports = router;
