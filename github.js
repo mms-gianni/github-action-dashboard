@@ -263,7 +263,7 @@ GitHub.getMetrics = function getMetrics() {
         for (const run of _runs) {
             metrics += "# HELP: status of workflow '" + run.workflow + "'\n";
             metrics += "# TYPE: status gauge\n";
-            metrics += "action_run{repo=\"" + run.repo + "\",repoowner=\"" + run.owner + "\",workflow=\"" + run.workflow + "\",workflowId=\"" + run.workflowId + "\",branch=\"" + run.branch + "\"} " + status_int[run.status] + "\n";
+            metrics += "action_run{repo=\"" + run.repo + "\",workflow=\"" + run.workflow + "\"} " + status_int[run.status] + "\n";
         }
     }
 
