@@ -255,7 +255,7 @@ GitHub.getMetrics = function getMetrics() {
         for (const repo in _stats.repos_with_workflows) {
             metrics += "# HELP: number of workflows for repo " + repo + "\n";
             metrics += "# TYPE: workflows_for_repo gauge\n";
-            metrics += "workflows{repo=" + repo + "} " + _stats.repos_with_workflows[repo] + "\n";
+            metrics += "workflows{repo=\"" + repo + "\"} " + _stats.repos_with_workflows[repo] + "\n";
         }
     }
 
